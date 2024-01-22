@@ -23,7 +23,7 @@ for (int i = 1; i < 11; i++)
     
     Personal personal = new Personal()
     {
-        UserId = commonUser.UserId,
+        UserId = commonUser.Id,
         Salary = 100 + (i * i),
         SSN = "SSN" + i,
         User = commonUser
@@ -32,9 +32,8 @@ for (int i = 1; i < 11; i++)
     
     Student student = new Student()
     {
-        UserId = commonUser.UserId,
+        UserId = commonUser.Id,
         StudentNumber = "S" + i,
-        Department = "Department" + i,
         Marks = (byte)(1 + i), 
         Absenteeism = (byte)(1 + i),
         User = commonUser
@@ -43,7 +42,7 @@ for (int i = 1; i < 11; i++)
   
     Jobber jobber = new Jobber()
     {
-        UserId = commonUser.UserId,
+        UserId = commonUser.Id,
         Plate = "Plate" + i,
         WorkArea = "WorkArea" + i,
         User = commonUser
@@ -70,7 +69,7 @@ for (int i = 12; i < 103; i++)
 
     Personal personal = new Personal()
     {
-        UserId = newUser.UserId,
+        UserId = newUser.Id,
         Salary = 100 + (i * i),
         SSN = "SSN" + i,
         User = newUser
@@ -94,9 +93,8 @@ for (int i = 12; i < 103; i++)
 
     Student student = new Student()
     {
-        UserId = newUser.UserId,
+        UserId = newUser.Id,
         StudentNumber = "S" + i,
-        Department = "Department" + i,
         Marks = (byte)(1 + i), 
         Absenteeism = (byte)(1 + i),
         User = newUser
@@ -120,7 +118,7 @@ for (int i = 12; i < 103; i++)
 
     Jobber jobber = new Jobber()
     {
-        UserId = newUser.UserId,
+        UserId = newUser.Id,
         Plate = "Plate" + i,
         WorkArea = "WorkArea" + i,
         User = newUser
@@ -129,5 +127,5 @@ for (int i = 12; i < 103; i++)
     db.Users.Add(newUser);
     db.Jobbers.Add(jobber);
 }
-
+db.SaveChanges();
 Console.ReadLine();
